@@ -1,6 +1,6 @@
 body {
   background: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: "PT Sans";
   max-width: 100%;
 }
 .hero {
@@ -85,7 +85,7 @@ p {
 .media-box p {
   max-width: 400px;
 }
-.outside-wrap {
+/* .outside-wrap {
   overflow: hidden;
   position: relative;
 }
@@ -110,7 +110,7 @@ p {
 }
 .underline {
   text-decoration: underline;
-}
+} */
 .navigation-links {
   display: flex;
   justify-content: center;
