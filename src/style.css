@@ -87,6 +87,7 @@ p {
   margin: 30px auto;
   padding: 0;
   opacity: 0.2;
+  width: 26%;
 }
 .container-main {
   width: 100%;
@@ -164,7 +165,7 @@ p {
   background-color: black;
 }
 nav {
-  padding: 10px 0;
+  padding: 0;
 }
 .navbar-toggler {
   color: white !important;
@@ -233,7 +234,7 @@ nav li.active a {
 
   nav li {
     margin-left: 6px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .logo {
     max-width: 50px;
@@ -249,5 +250,8 @@ nav li.active a {
   .outside-bg-top {
     width: 50%;
     vertical-align: middle;
+  }
+  .shri {
+    width: 50%;
   }
 }
