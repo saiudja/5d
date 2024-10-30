@@ -6,7 +6,7 @@ body {
 .hero {
   min-height: calc(100vh - 70px);
   padding: 30px;
-  margin-top: 56px;
+  margin-top: 46px;
 }
 /* .main {
   background-image: url("/media/shri.png"); 
@@ -160,49 +160,42 @@ p {
 .git:hover {
   text-decoration: underline;
 }
-nav {
-  padding: 10px 30px;
+.navbar {
   background-color: black;
-  justify-content: flex-start;
+}
+nav {
+  padding: 10px 0;
+}
+.navbar-toggler {
+  color: white !important;
+}
+.dropdown-menu {
+  background-color: black;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
 nav ul {
   padding: 0;
   margin: 0;
-  font-size: 20px;
 }
 nav li {
   display: inline;
   list-style-type: none;
-  line-height: 30px;
-  margin-left: 10px;
+  line-height: 40px;
+  margin-left: 15px;
+  font-size: 16px;
 }
 nav a {
-  text-decoration: none;
-  color: white;
+  color: white !important;
 }
 nav a:hover,
 nav li.active a {
-  color: white;
-  opacity: 0.8;
+  color: white !important;
+  background-color: black !important;
+  opacity: 0.7;
   transition: all 100ms ease-in-out;
 }
-/* .navbar-nav {
-  display: flex;
-  margin-left: 0; 
-  padding-left: 0;
-}
-
-.navbar-nav .nav-item {
-  margin-right: 20px;
-}
-
-.navbar-nav .dropdown-menu {
-  position: absolute;
-}
-
-.fixed-top {
-  padding: 10px 20px; 
-} */
 
 .logo {
   max-height: 40px;
@@ -213,11 +206,11 @@ nav li.active a {
 }
 
 .gallery img {
-  width: 33.33%; /* Кожне зображення займатиме третину ширини контейнера */
-  height: auto; /* Зберігає пропорції зображень */
-  margin: 0; /* Забирає відступи */
+  width: 33.33%;
+  height: auto;
+  margin: 0;
   padding: 0;
-  border: none; /* Прибирає можливі межі */
+  border: none;
 }
 @media (max-width: 420px) {
   h3 {

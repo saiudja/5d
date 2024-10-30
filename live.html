@@ -28,8 +28,9 @@
   </head>
   <body>
     <div>
-      <nav class="d-flex justify-content-between fixed-top">
-        <a class="navbar-brand" href="/index.html" title="Home"
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+<a class="navbar-brand" href="/index.html" title="Saiudja's pictures"
           ><img
             src="/media/saiudja.png"
             class="logo d-none d-sm-block"
@@ -37,19 +38,54 @@
           <img
             src="/media/saiudja-short.png"
             class="logo d-block d-sm-none"
-            alt="Sai logo"
-        /></a>
-        <ul>
-          <li>
-            <a href="/realnist.html" title="5d"> 5d</a>
-          </li>
-          <li>
-            <a href="/live.html" title="Live pictures">Creations</a>
-          </li>
-          <li>
-            <a href="/order.html" title="Order">Order</a>
-          </li>
-        </ul>
+            alt="Sai logo" /></a
+        ><button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/realnist.html">5д</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/live.html">Твори</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order.html">Замовлення</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/projects.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Бібліотека
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/library-sg.html">Сакральна геометрія</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/.html">Божества</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/.html">Символи</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        </div>
       </nav>
     </div>
 
