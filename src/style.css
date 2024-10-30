@@ -155,7 +155,7 @@ nav li {
   display: inline;
   list-style-type: none;
   line-height: 30px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 nav a {
   text-decoration: none;
@@ -190,7 +190,7 @@ nav li.active a {
     display: block;
   }
   nav {
-    font-size: 16px;
+    font-size: 12px;
   }
   .logo {
     max-width: 50px;
