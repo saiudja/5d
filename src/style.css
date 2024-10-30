@@ -8,7 +8,11 @@ body {
   padding: 30px;
   margin-top: 56px;
 }
-
+/* .main {
+  background-image: url("/media/shri.png"); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+} */
 .hero p {
   margin: 20px 30px;
 }
@@ -69,6 +73,20 @@ p {
   padding: 0;
   margin: 0;
   text-align: justify;
+}
+.number {
+  list-style-type: none;
+}
+.symbol {
+  margin-top: 20px;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.shri {
+  margin: 30px auto;
+  padding: 0;
+  opacity: 0.2;
 }
 .container-main {
   width: 100%;
@@ -145,6 +163,7 @@ p {
 nav {
   padding: 10px 30px;
   background-color: black;
+  justify-content: flex-start;
 }
 nav ul {
   padding: 0;
@@ -167,6 +186,24 @@ nav li.active a {
   opacity: 0.8;
   transition: all 100ms ease-in-out;
 }
+/* .navbar-nav {
+  display: flex;
+  margin-left: 0; 
+  padding-left: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+.fixed-top {
+  padding: 10px 20px; 
+} */
+
 .logo {
   max-height: 40px;
 }
