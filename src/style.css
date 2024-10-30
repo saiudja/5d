@@ -169,11 +169,22 @@ nav {
 .navbar-toggler {
   color: white !important;
 }
+.navbar-toggler-icon {
+  color: white !important;
+}
 .dropdown-menu {
   background-color: black;
   font-size: 14px;
   padding: 0;
   margin: 0;
+}
+.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+}
+.dropdown-item {
+  padding: 0 10px !important;
+  margin: 0 !important;
 }
 nav ul {
   padding: 0;
@@ -183,8 +194,8 @@ nav li {
   display: inline;
   list-style-type: none;
   line-height: 40px;
-  margin-left: 15px;
-  font-size: 16px;
+  margin-left: 10px;
+  font-size: 18px;
 }
 nav a {
   color: white !important;
@@ -219,7 +230,9 @@ nav li.active a {
   .media-box {
     display: block;
   }
-  nav {
+
+  nav li {
+    margin-left: 6px;
     font-size: 12px;
   }
   .logo {
