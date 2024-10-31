@@ -6,13 +6,9 @@ body {
 .hero {
   min-height: calc(100vh - 70px);
   padding: 30px;
-  margin-top: 46px;
+  margin-top: 52px;
 }
-/* .main {
-  background-image: url("/media/shri.png"); 
-  background-position: center; 
-  background-repeat: no-repeat; 
-} */
+
 .hero p {
   margin: 20px 30px;
 }
@@ -80,8 +76,6 @@ p {
 .symbol {
   margin-top: 20px;
   padding: 0;
-  border-radius: 50%;
-  overflow: hidden;
 }
 .shri {
   margin: 30px auto;
