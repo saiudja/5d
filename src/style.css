@@ -17,6 +17,7 @@ footer {
   /* margin-top: -50px; */
   background-color: black;
   padding: 15px 0;
+  color: white;
 }
 footer .social-links {
   text-align: center;
@@ -227,8 +228,8 @@ nav li.active a {
   }
 
   nav li {
-    margin-left: 6px;
-    font-size: 14px;
+    margin-left: 5px;
+    font-size: 13px;
   }
   .logo {
     max-width: 50px;
