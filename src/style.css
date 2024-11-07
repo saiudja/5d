@@ -65,7 +65,7 @@ h3 {
 }
 p {
   color: black;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   padding: 0;
   margin: 0;
@@ -85,13 +85,11 @@ p {
   padding: 0;
   width: 26%;
 }
-#myDiv {
-  margin-top: 40px;
-}
 ul {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
+  text-align: justify;
 }
 .myList li {
   opacity: 0;
