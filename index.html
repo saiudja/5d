@@ -16,11 +16,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    
     <script
       src="https://kit.fontawesome.com/5d487f9432.js"
       crossorigin="anonymous"
@@ -103,12 +99,15 @@
   </div>
 
     <div class="hero">
-      <h1 class="text-center mt-3 mb-3"><a class="primary-link" href="realnist.html">5d реальність</a></h1>
-      <h3 class="text-center">саме те, що Ми творимо, як Творець, </br>та трохи більше, ніж можемо побачити очима.</h3>
-        <h1 class="text-center mt-3 mb-3"><a class="primary-link" href="live.html">Живі картини</a></h1>
-        <h3 class="text-center"><strong>5-ти вимірні твори</strong> - двері у вибрану квантову реальність.</h3>
-        <div class="text-center mt-3">
-          <img src="/media/shri.png" class="shri">
+      <ul class="myList">
+        <li>
+      <h1 class="text-center mt-3 mb-3"><a class="primary-link" href="realnist.html">5d реальність</a></h1></li>
+      <li><h3 class="text-center">саме те, що Ми творимо, як Творець, </br>та трохи більше, ніж можемо побачити очима.</h3></li>
+        <li><h1 class="text-center mt-3 mb-3"><a class="primary-link" href="live.html">Живі картини</a></h1></li>
+        <li><h3 class="text-center"><strong>5-ти вимірні твори</strong> - двері у вибрану квантову реальність.</h3></li>
+        </ul>
+        <div class="text-center mt-3" id="myDiv ">
+          <img src="/media/shri.png" id="shri">
     </div>
     </div>
  
@@ -156,5 +155,36 @@
    This project was coded by Saiudja
    </div>
 </footer>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        // Функція для поетапного відображення елементів списку
+        function showListItems(callback) {
+            const items = document.querySelectorAll('.myList li');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1'; // Поступово робимо елемент видимим
+                    // Якщо це останній елемент, викликаємо callback
+                    if (index === items.length - 1 && typeof callback === 'function') {
+                        callback();
+                    }
+                }, index * 1000); // Інтервал у 0,5 секунди для кожного наступного елемента
+            });
+        }
+
+        // Функція для поступового відображення div
+        function showDiv() {
+            const div = document.getElementById('shri');
+            div.style.opacity = '0.4'; // Зробимо div повністю видимим
+        }
+
+        // Виконуємо функцію для відображення списку та після завершення — функцію для div
+        window.onload = function() {
+            showListItems(showDiv); // Показуємо список, а потім div
+        };
+    </script>
   </body>
 </html>

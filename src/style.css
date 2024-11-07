@@ -78,12 +78,21 @@ p {
   margin-top: 20px;
   padding: 0;
 }
-.shri {
-  margin: 30px auto;
+#shri {
+  opacity: 0;
+  transition: opacity 8s ease; /* Плавний перехід до повної видимості за 2 секунди */
+  margin: 32px auto;
   padding: 0;
-  opacity: 0.2;
   width: 26%;
 }
+ul {
+  list-style-type: none;
+}
+.myList li {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
 .container-main {
   width: 100%;
   margin: 0 auto;
