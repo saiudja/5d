@@ -81,12 +81,17 @@ p {
 #shri {
   opacity: 0;
   transition: opacity 8s ease; /* Плавний перехід до повної видимості за 2 секунди */
-  margin: 32px auto;
+  margin: 36px auto;
   padding: 0;
   width: 26%;
 }
+#myDiv {
+  margin-top: 40px;
+}
 ul {
   list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
 }
 .myList li {
   opacity: 0;
@@ -255,8 +260,8 @@ nav li.active a {
     width: 50%;
     vertical-align: middle;
   }
-  .shri {
-    width: 50%;
+  #shri {
+    width: 70%;
   }
   .symbol {
     width: 50%;
