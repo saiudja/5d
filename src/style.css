@@ -87,8 +87,10 @@ p {
 }
 ul {
   list-style-type: none;
-  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 300;
   padding: 0;
+  margin: 0;
   text-align: justify;
 }
 .myList li {
