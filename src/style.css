@@ -97,7 +97,9 @@ ul {
   opacity: 0;
   transition: opacity 1s ease;
 }
-
+.myDiv {
+  margin-top: 20px;
+}
 .container-main {
   width: 100%;
   margin: 0 auto;
@@ -160,11 +162,19 @@ ul {
 .email-link:hover {
   text-decoration: underline;
 }
+.github {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 10px;
+  opacity: 0.5;
+  text-decoration: none;
+}
 .git {
   display: flex;
   justify-content: center;
   color: white;
-  font-size: 14px;
+  font-size: 10px;
   text-decoration: none;
 }
 .git:hover {
@@ -261,7 +271,8 @@ nav li.active a {
     vertical-align: middle;
   }
   #shri {
-    width: 70%;
+    width: 80%;
+    margin-top: 0;
   }
   .symbol {
     width: 50%;
