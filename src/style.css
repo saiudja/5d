@@ -280,6 +280,9 @@ nav li.active a {
   border: none;
 }
 @media (max-width: 420px) {
+  img {
+    width: 100%;
+  }
   h3 {
     margin: 0 20px 0 20px;
   }
@@ -298,6 +301,7 @@ nav li.active a {
     display: flex;
     margin: 0 auto;
   }
+
   .outside-bg {
     width: 100%;
     vertical-align: middle;
