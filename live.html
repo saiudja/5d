@@ -148,6 +148,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k2.png"
             class="img-fluid p-2 shadow rounded pages"
+            id="zoomableImage"
             width="400px"
             alt="Shiva"
           />
@@ -178,6 +179,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k1.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Sadashiva"
           />
@@ -250,6 +252,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k6.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Virabhadra"
           />
@@ -291,6 +294,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k3.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Mahadev"
           />
@@ -332,6 +336,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k9.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Parvati"
           />
@@ -380,6 +385,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k5.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Nataradja"
           />
@@ -414,6 +420,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k8.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Kali"
           />
@@ -446,6 +453,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k7.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Arthanaishvari"
           />
@@ -520,5 +528,24 @@ NFT-токени на даний момент виставлені на аукц
    This project was coded by Saiudja
    </div>
 </footer>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const img = document.getElementById("zoomableImage");
+
+            img.addEventListener("mouseenter", function () {
+                const fullscreenDiv = document.createElement("div");
+                fullscreenDiv.classList.add("fullscreen");
+
+                const clonedImg = img.cloneNode();
+                fullscreenDiv.appendChild(clonedImg);
+
+                fullscreenDiv.addEventListener("mouseleave", function () {
+                    fullscreenDiv.remove();
+                });
+
+                document.body.appendChild(fullscreenDiv);
+            });
+        });
+    </script>
   </body>
 </html>
