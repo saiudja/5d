@@ -219,6 +219,7 @@ NFT-токени на даний момент виставлені на аукц
           <img
             src="/media/pictures/k4.png"
             class="img-fluid p-2 shadow rounded"
+            id="zoomableImage"
             width="400px"
             alt="Lingadhava"
           />
@@ -530,20 +531,27 @@ NFT-токени на даний момент виставлені на аукц
 </footer>
 <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const img = document.getElementById("zoomableImage");
+            const images = document.querySelectorAll('img#zoomableImage');
 
-            img.addEventListener("mouseenter", function () {
-                const fullscreenDiv = document.createElement("div");
-                fullscreenDiv.classList.add("fullscreen");
+            images.forEach(img => {
+                img.addEventListener("mouseenter", function () {
+                    const fullscreenDiv = document.createElement("div");
+                    fullscreenDiv.classList.add("fullscreen");
 
-                const clonedImg = img.cloneNode();
-                fullscreenDiv.appendChild(clonedImg);
+                    const clonedImg = img.cloneNode();
+                    clonedImg.style.maxWidth = "90vw";
+                    clonedImg.style.maxHeight = "90vh";
+                    clonedImg.style.height = "auto";
+                    clonedImg.style.width = "auto";
 
-                fullscreenDiv.addEventListener("mouseleave", function () {
-                    fullscreenDiv.remove();
+                    fullscreenDiv.appendChild(clonedImg);
+
+                    fullscreenDiv.addEventListener("mouseleave", function () {
+                        fullscreenDiv.remove();
+                    });
+
+                    document.body.appendChild(fullscreenDiv);
                 });
-
-                document.body.appendChild(fullscreenDiv);
             });
         });
     </script>
