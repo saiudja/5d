@@ -59,6 +59,8 @@ footer .social-links a:hover {
   max-height: 90vh;
   height: auto;
   width: auto;
+  transform: scale(1); /* Початковий масштаб */
+  transition: transform 0.1s ease-in-out;
 }
 
 h1 {
@@ -124,6 +126,15 @@ ul {
 
 .myDiv {
   margin-top: 20px;
+}
+
+.list {
+  list-style-type: circle;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
 }
 .container-main {
   width: 100%;
