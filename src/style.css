@@ -30,20 +30,30 @@ body {
 .hero,
 .heros {
   min-height: calc(100vh - 70px);
-  padding: 30px;
-  margin-top: 52px;
+  /* padding: 30px; */
+  margin-top: 72px;
 }
 
 .hero p {
   margin: 20px 20px;
 }
-
+.hero ul {
+  padding: 50px 30px 0 30px;
+}
 .heros p {
   margin: 20px 200px;
 }
 
 .heros ul {
   margin: 20px 200px;
+}
+.black {
+  background-color: black;
+  color: white;
+  width: 100vw; /* Ширина на весь екран (viewport width) */
+  margin: 0; /* Видаляємо зовнішні відступи, щоб не було проміжків */
+  padding: 1rem; /* Додаємо внутрішні відступи для зручності, можна змінити */
+  box-sizing: border-box; /* Включаємо padding у загальну ширину */
 }
 footer {
   height: 280px;
