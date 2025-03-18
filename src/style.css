@@ -27,7 +27,8 @@ body {
   font-style: italic;
 }
 
-.hero {
+.hero,
+.heros {
   min-height: calc(100vh - 70px);
   padding: 30px;
   margin-top: 52px;
@@ -36,23 +37,11 @@ body {
 .hero p {
   margin: 20px 20px;
 }
-.heros {
-  min-height: calc(100vh - 70px);
-  padding: 30px;
-  margin-top: 52px;
-}
+
 .heros p {
   margin: 20px 200px;
 }
-.heross {
-  min-height: calc(100vh - 70px);
-  padding: 30px;
-  margin-top: 52px;
-}
-.heross p {
-  margin: 20px 200px;
-  font-size: 24px;
-}
+
 .heros ul {
   margin: 20px 200px;
 }
@@ -390,9 +379,6 @@ nav li.active a {
   }
   .heros ul {
     margin: 0 10px;
-  }
-  .heross p {
-    margin: 10px 10px;
   }
   .box {
     width: 100%;
