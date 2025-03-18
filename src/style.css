@@ -31,7 +31,7 @@ body {
 .heros {
   min-height: calc(100vh - 70px);
   /* padding: 30px; */
-  margin-top: 72px;
+  margin-top: 68px;
 }
 
 .hero p {
@@ -385,10 +385,10 @@ nav li.active a {
     width: 50%;
   }
   .heros p {
-    margin: 10px 10px;
+    margin: 10px 20px;
   }
   .heros ul {
-    margin: 0 10px;
+    margin: 0 20px;
   }
   .box {
     width: 100%;
