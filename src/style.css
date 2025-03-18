@@ -12,6 +12,17 @@ body {
 .hero p {
   margin: 20px 20px;
 }
+.heros {
+  min-height: calc(100vh - 70px);
+  padding: 30px;
+  margin-top: 52px;
+}
+.heros p {
+  margin: 20px 200px;
+}
+.heros ul {
+  margin: 20px 200px;
+}
 footer {
   height: 240px;
   /* margin-top: -50px; */
@@ -316,5 +327,11 @@ nav li.active a {
   }
   .symbol {
     width: 50%;
+  }
+  .heros p {
+    margin: 10px 10px;
+  }
+  .heros ul {
+    margin: 0 10px;
   }
 }
