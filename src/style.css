@@ -1,8 +1,32 @@
 body {
   background: #ffffff;
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   max-width: 100%;
 }
+.pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-sans-bold {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pt-sans-regular-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pt-sans-bold-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 .hero {
   min-height: calc(100vh - 70px);
   padding: 30px;
@@ -19,6 +43,15 @@ body {
 }
 .heros p {
   margin: 20px 200px;
+}
+.heross {
+  min-height: calc(100vh - 70px);
+  padding: 30px;
+  margin-top: 52px;
+}
+.heross p {
+  margin: 20px 400px;
+  font-size: 24px;
 }
 .heros ul {
   margin: 20px 200px;
@@ -77,24 +110,16 @@ footer .social-links a:hover {
 h1 {
   color: black;
   font-size: 56px;
-  line-height: 40px;
-  font-weight: 600;
 }
 h2 {
   color: black;
   font-size: 36px;
-  font-weight: 500;
 }
 h3 {
   color: black;
   font-size: 18px;
-  font-weight: 400;
 }
-h4 {
-  font-size: 28px;
-  margin: 0;
-  color: black;
-}
+
 h1,
 h2,
 h3 {
@@ -103,7 +128,6 @@ h3 {
 p {
   color: black;
   font-size: 18px;
-  font-weight: 300;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -163,7 +187,34 @@ ul {
 .media-box p {
   max-width: 400px;
 }
+.box {
+  background-color: #4e89ae;
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  padding: 0 15px; /* Додано бокові відступи */
+  text-align: center; /* Щоб текст красиво центрувався */
+}
 
+.boxes-wrapper {
+  padding: 10px 0;
+  /* Висота під один box плюс відступи */
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxes-inner {
+  display: flex;
+  gap: 30px; /* Відстань між боксами */
+}
 .navigation-links {
   display: flex;
   justify-content: center;
