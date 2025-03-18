@@ -50,7 +50,7 @@ body {
   margin-top: 52px;
 }
 .heross p {
-  margin: 20px 400px;
+  margin: 20px 200px;
   font-size: 24px;
 }
 .heros ul {
@@ -197,14 +197,13 @@ ul {
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
-  padding: 0 15px; /* Додано бокові відступи */
-  text-align: center; /* Щоб текст красиво центрувався */
+  font-size: 16px;
+  padding: 0 15px;
+  text-align: center;
 }
 
 .boxes-wrapper {
   padding: 10px 0;
-  /* Висота під один box плюс відступи */
   height: 170px;
   display: flex;
   justify-content: center;
@@ -213,7 +212,7 @@ ul {
 
 .boxes-inner {
   display: flex;
-  gap: 30px; /* Відстань між боксами */
+  gap: 30px;
 }
 .navigation-links {
   display: flex;
