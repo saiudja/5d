@@ -204,15 +204,22 @@ ul {
 
 .boxes-wrapper {
   padding: 10px 0;
-  height: 170px;
+  /* Забираємо жорстку фіксацію height */
+  min-height: 170px; /* мінімальна висота для десктопу */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Тепер тримає позицію в потоці */
+  box-sizing: border-box;
 }
 
 .boxes-inner {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap; /* Дозволяє переносити бокси */
+  justify-content: center;
+  width: 100%;
 }
 .navigation-links {
   display: flex;
@@ -340,7 +347,7 @@ nav li.active a {
   padding: 0;
   border: none;
 }
-@media (max-width: 420px) {
+@media (max-width: 768px) {
   img {
     width: 100%;
   }
@@ -383,5 +390,17 @@ nav li.active a {
   }
   .heros ul {
     margin: 0 10px;
+  }
+  .heross p {
+    margin: 10px 10px;
+  }
+  .box {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto; /* Відступи і центрування */
+  }
+
+  .boxes-wrapper {
+    min-height: auto; /* Дозволяє займати місце за контентом */
   }
 }
