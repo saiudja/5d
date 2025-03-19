@@ -27,21 +27,21 @@ body {
   font-style: italic;
 }
 
-.hero,
-.heros {
+.container-main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.hero {
   height: 100vh;
-  /* padding: 30px; */
-  margin-top: 68px;
+  margin-top: 78px;
+}
+.heros {
+  margin-top: 78px;
 }
 
-.hero p {
-  margin: 20px 20px;
-}
-.hero ul {
-  padding: 50px 30px 0 30px;
-}
 .heros p {
-  margin: 20px 200px;
+  margin: 20px 300px;
 }
 
 .heros ul {
@@ -52,7 +52,7 @@ body {
   color: white;
   width: 100vw; /* Ширина на весь екран (viewport width) */
   margin: 0; /* Видаляємо зовнішні відступи, щоб не було проміжків */
-  padding: 1rem; /* Додаємо внутрішні відступи для зручності, можна змінити */
+  padding: 2rem; /* Додаємо внутрішні відступи для зручності, можна змінити */
   box-sizing: border-box; /* Включаємо padding у загальну ширину */
 }
 footer {
@@ -113,6 +113,7 @@ h1 {
 h2 {
   color: black;
   font-size: 36px;
+  padding: 2rem;
 }
 h3 {
   color: black;
@@ -127,7 +128,7 @@ h3 {
 p {
   color: black;
   font-size: 18px;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   text-align: justify;
 }
@@ -170,11 +171,7 @@ ul {
   margin: 0;
   text-align: justify;
 }
-.container-main {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 30px;
-}
+
 .about-section {
   text-align: center;
 }
