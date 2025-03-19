@@ -29,7 +29,7 @@ body {
 
 .hero,
 .heros {
-  min-height: calc(100vh - 70px);
+  height: 100vh;
   /* padding: 30px; */
   margin-top: 68px;
 }
