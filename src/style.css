@@ -171,7 +171,9 @@ ul {
   margin: 0;
   text-align: justify;
 }
-
+.little {
+  font-size: 14px;
+}
 .about-section {
   text-align: center;
 }
