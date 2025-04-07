@@ -97,6 +97,9 @@ footer .social-links a:hover {
   align-items: center;
   z-index: 1000;
 }
+.blu {
+  color: #4e89ae;
+}
 .fullscreen img {
   max-width: 90vw;
   max-height: 90vh;
@@ -142,7 +145,7 @@ p {
 #shri {
   opacity: 0;
   transition: opacity 8s ease; /* Плавний перехід до повної видимості за 2 секунди */
-  margin: 36px auto;
+  margin: 28px auto;
   padding: 0;
   width: 26%;
 }
