@@ -285,6 +285,15 @@ ul {
 .git:hover {
   text-decoration: underline;
 }
+.link {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+  color: white;
+}
+.link:hover {
+  text-decoration: underline;
+}
 .navbar {
   background-color: black;
 }
