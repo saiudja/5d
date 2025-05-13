@@ -1,116 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AR Контент з MindAR.js</title>
-    <script src="https://cdn.jsdelivr.net/npm/mindar@latest/dist/mindar.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/3.3.2/aframe/build/aframe-ar.min.js"></script>
     <style>
       body {
-        font-family: Arial, sans-serif;
         margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
+        overflow: hidden;
       }
-      #ar-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
+      #code-check {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 8px;
       }
-      #access-form {
+      #gallery {
+        display: none;
         position: absolute;
         top: 20px;
-        left: 20px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: none;
+        left: 10px;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 8px;
       }
-      #result-message {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: green;
-        font-size: 24px;
-        font-weight: bold;
-        display: none;
-      }
-      #error-message {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: red;
-        font-size: 24px;
-        font-weight: bold;
-        display: none;
+      #gallery img {
+        width: 100px;
+        margin: 5px;
       }
     </style>
   </head>
+
   <body>
-    <div id="ar-container">
-      <div id="access-form">
-        <h3>Введіть код доступу для AR контенту</h3>
-        <input type="text" id="access-code" placeholder="Введіть код" />
-        <button onclick="checkCode()">Підтвердити</button>
-      </div>
-      <div id="result-message">🎉 Доступ до контенту надано!</div>
-      <div id="error-message">🚫 Невірний код доступу.</div>
+    <a-scene embedded arjs>
+      <a-marker
+        type="pattern"
+        url="/media/pattern-Shiva_Mandala_wallpaper.patt"
+      >
+        <a-text
+          value="activation-plant26-54"
+          color="yellow"
+          position="0 0.5 0"
+          align="center"
+          scale="2 2 2"
+        ></a-text>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <div id="code-check">
+      <input type="text" id="code-input" placeholder="Введіть код" />
+      <button onclick="checkCode()">Активувати</button>
+    </div>
+
+    <div id="gallery">
+      <h3>Галерея активації</h3>
+      <p>Інструкція: перегляньте зображення та дотримуйтесь кроків.</p>
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
+      <img src="https://via.placeholder.com/100" />
     </div>
 
     <script>
-      // Ініціалізація MindAR
-      const mindar = new MindAR.MindAR();
-      mindar.create({
-        container: document.querySelector("#ar-container"),
-        imageTarget: "https://your-image-target-url.com", // Замініть на URL вашого маркера
-        maxTrackableTargets: 1,
-      });
-
-      // Показ AR-контенту
-      const arScene = document.createElement("a-scene");
-      arScene.setAttribute("embedded", "");
-      arScene.setAttribute("arjs", "");
-      arScene.setAttribute("background", "color: white");
-
-      const marker = document.createElement("a-marker");
-      marker.setAttribute("preset", "hiro"); // Використовуємо стандартний маркер Hiro
-
-      const textEntity = document.createElement("a-entity");
-      textEntity.setAttribute(
-        "text",
-        "value: ACCESS GRANTED; color: green; align: center;"
-      );
-      textEntity.setAttribute("position", "0 0.5 0");
-      textEntity.setAttribute("scale", "2 2 2");
-
-      marker.appendChild(textEntity);
-      arScene.appendChild(marker);
-
-      const cameraEntity = document.createElement("a-entity");
-      cameraEntity.setAttribute("camera", "");
-      arScene.appendChild(cameraEntity);
-
-      document.querySelector("#ar-container").appendChild(arScene);
-
-      // Перевірка коду доступу
-      const correctCode = "ACCESS1234"; // Встановіть правильний код
-
       function checkCode() {
-        const enteredCode = document.getElementById("access-code").value;
-
-        if (enteredCode === correctCode) {
-          document.getElementById("access-form").style.display = "none";
-          document.getElementById("result-message").style.display = "block";
-          mindar.start(); // Початок AR досвіду
+        const code = document.getElementById("code-input").value.trim();
+        if (code === "activation-plant26-54") {
+          document.getElementById("gallery").style.display = "block";
         } else {
-          document.getElementById("error-message").style.display = "block";
+          alert("Невірний код");
         }
       }
     </script>
