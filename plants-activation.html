@@ -1,77 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
   <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.1.8/aframe/build/aframe-ar.js"></script>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-      #code-check {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        z-index: 999;
-        background: rgba(0, 0, 0, 0.7);
-        padding: 10px;
-        border-radius: 8px;
-      }
-      #gallery {
-        display: none;
-        position: absolute;
-        top: 20px;
-        left: 10px;
-        z-index: 999;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 10px;
-        border-radius: 8px;
-      }
-      #gallery img {
-        width: 100px;
-        margin: 5px;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="description" content="5D-ART" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дякую за придбання цифрової версії 5D-ART твору</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&family=Lora:ital,wght@0,400..700;1,400..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5d487f9432.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link href="/src/style.css" rel="stylesheet" type="text/css" />
   </head>
-
   <body>
-    <a-scene embedded arjs>
-      <a-marker type="pattern" url="pattern-fon.patt">
-        <a-text value="activation-plant26-54" color="yellow" position="0 0 0" scale="1 1 1">
-      </a-marker>
-      
-      <a-entity camera></a-entity>
-    </a-scene>
+    <div class="container">
+      <h1 class="text-center mt-5">
+        Дякую за придбання цифрової версії 5D-ART твору
+      </h1>
 
-    <div id="code-check">
-      <input type="text" id="code-input" placeholder="Введіть код" />
-      <button onclick="checkCode()">Активувати</button>
-    </div>
+      <div>
+        <h2>Що таке 5D-арт?</h2>
+        <p>
+          5D-арт — це синергія візуального мистецтва, енергетики,
+          інтерактивності, звуку та доповненої реальності, створена для
+          глибокого особистого досвіду та активації внутрішніх ресурсів.
+        </p>
+      </div>
 
-    <div id="gallery">
-      <h3>Галерея активації</h3>
-      <p>Інструкція: перегляньте зображення та дотримуйтесь кроків.</p>
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
-      <img src="https://via.placeholder.com/100" />
+      <div>
+        <h2>Про колекцію</h2>
+        <p>
+          Ця колекція унікальних цифрових арт-об’єктів створена для
+          індивідуальної активації вашого простору. Кожен елемент має власну
+          частоту і відкриває новий рівень сприйняття мистецтва.
+        </p>
+      </div>
+
+      <div>
+        <h2>Інструкція до активації</h2>
+        <ol>
+          <li>Знайдіть затишне місце для перегляду колекції.</li>
+          <li>
+            Сфокусуйтеся на своїх відчуттях під час перегляду кожного малюнка.
+          </li>
+          <li>
+            Використовуйте додаткову інструкцію або медитацію, що додається до
+            колекції.
+          </li>
+        </ol>
+      </div>
+
+      <button class="primary-link mb-5" id="startButton">Почнімо</button>
+      <div id="keyForm">
+        <p>Введіть ваш ключ для активації:</p>
+        <input
+          type="text"
+          class="primary-link"
+          id="keyInput"
+          placeholder="Введіть ключ"
+        />
+        <button class="primary-link" id="submitKey">Перевірити</button>
+        <div class="error" id="errorMessage"></div>
+      </div>
+
+      <div class="gallery1 mt-3" id="gallery1">
+        <img src="media/y1.png" alt="Буття" />
+        <h2 class="text-center"><strong>Буття</strong></h2>
+        <img src="media/y2.png" alt="Рух" />
+        <h2 class="text-center"><strong>Рух</strong></h2>
+        <img src="media/y3.png" alt="Знання" />
+        <h2 class="text-center"><strong>Знання</strong></h2>
+        <img src="media/y4.png" alt="Краса" />
+        <h2 class="text-center"><strong>Краса</strong></h2>
+        <img src="media/y5.png" alt="Присутність" />
+        <h2 class="text-center"><strong>Присутність</strong></h2>
+        <img src="media/y6.png" alt="Споглядання" />
+        <h2 class="text-center"><strong>Споглядання</strong></h2>
+        <img src="media/y7.png" alt="Ненасилля" />
+        <h2 class="text-center"><strong>Ненасилля</strong></h2>
+        <img src="media/y8.png" alt="Мир" />
+        <h2 class="text-center"><strong>Мир</strong></h2>
+        <img src="media/y9.png" alt="Любов" />
+        <h2 class="text-center"><strong>Любов</strong></h2>
+      </div>
     </div>
 
     <script>
-      function checkCode() {
-        const code = document.getElementById("code-input").value.trim();
-        if (code === "activation-plant26-54") {
-          document.getElementById("gallery").style.display = "block";
-        } else {
-          alert("Невірний код");
-        }
-      }
+      document
+        .getElementById("startButton")
+        .addEventListener("click", function () {
+          document.getElementById("keyForm").style.display = "block";
+          this.style.display = "none";
+        });
+
+      document
+        .getElementById("submitKey")
+        .addEventListener("click", function () {
+          const key = document.getElementById("keyInput").value;
+          fetch("check_key.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "key=" + encodeURIComponent(key),
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              if (data.trim() === "OK") {
+                document.getElementById("gallery1").style.display = "block";
+                document.getElementById("keyForm").style.display = "none";
+                document
+                  .getElementById("gallery1")
+                  .scrollIntoView({ behavior: "smooth" });
+              } else {
+                document.getElementById("errorMessage").innerText =
+                  "Невірний ключ, спробуйте ще раз.";
+              }
+            });
+        });
     </script>
   </body>
 </html>
