@@ -113,7 +113,7 @@
         .getElementById("submitKey")
         .addEventListener("click", function () {
           const key = document.getElementById("keyInput").value;
-          fetch("/check_key.php", {
+          fetch("https://saiudja.space/check_key.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "key=" + encodeURIComponent(key),
