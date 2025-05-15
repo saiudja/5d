@@ -35,39 +35,41 @@
       </h1>
 
       <div>
-        <h2>Що таке 5D-арт?</h2>
+        <h2 class="text-center"><strong>Що таке 5D-арт?</strong></h2>
         <p>
           5D-арт — це синергія візуального мистецтва, енергетики,
-          інтерактивності, звуку та доповненої реальності, створена для
-          глибокого особистого досвіду та активації внутрішніх ресурсів.
+          інтерактивності та доповненої реальності, створена для глибокого
+          особистого досвіду та активації внутрішніх ресурсів.
         </p>
       </div>
 
       <div>
-        <h2>Про колекцію</h2>
+        <h2 class="text-center"><strong>Про колекцію</strong></h2>
         <p>
           Ця колекція унікальних цифрових арт-об’єктів створена для
-          індивідуальної активації вашого простору. Кожен елемент має власну
+          індивідуальної активації базових станів. Кожен елемент має власну
           частоту і відкриває новий рівень сприйняття мистецтва.
         </p>
       </div>
 
       <div>
-        <h2>Інструкція до активації</h2>
-        <ol>
-          <li>Знайдіть затишне місце для перегляду колекції.</li>
-          <li>
-            Сфокусуйтеся на своїх відчуттях під час перегляду кожного малюнка.
-          </li>
-          <li>
-            Використовуйте додаткову інструкцію або медитацію, що додається до
-            колекції.
-          </li>
-        </ol>
+        <h2 class="text-center"><strong>Інструкція до активації</strong></h2>
+
+          <p>Знайдіть затишне місце для перегляду колекції.</br>
+            Сфокусуйтеся на своїх відчуттях під час перегляду кожного малюнка.</br>
+            Вважайте їх тривимірним зображенням майстерності всередині вас.
+            Дивіться на них як на відображення чогось, що є у вас самих.
+            Подивіться на них та посміхніться. Чи володіють вони силою? Картинка
+            має ту силу, якою ви її наділяєте, відповідно до своєї ситуації та
+            тлумачення того, що вагоме для вас. Якщо ви відчуваєте щось,
+            дивлячись на малюнки, то отримуєте від них прекрасне послання зі
+            спогадами. Посміхайтеся і просто цінуйте ці витвори мистецтва.
+            Активація вже відбувається.
+          </p>
       </div>
 
       <button class="primary-link mb-5" id="startButton">Почнімо</button>
-      <div id="keyForm">
+      <!-- <div id="keyForm">
         <p>Введіть ваш ключ для активації:</p>
         <input
           type="text"
@@ -77,7 +79,7 @@
         />
         <button class="primary-link" id="submitKey">Перевірити</button>
         <div class="error" id="errorMessage"></div>
-      </div>
+      </div> -->
 
       <div class="gallery1 mt-3" id="gallery1">
         <img src="media/y1.png" alt="Буття" />
@@ -105,32 +107,11 @@
       document
         .getElementById("startButton")
         .addEventListener("click", function () {
-          document.getElementById("keyForm").style.display = "block";
+          document.getElementById("gallery1").style.display = "block";
           this.style.display = "none";
-        });
-
-      document
-        .getElementById("submitKey")
-        .addEventListener("click", function () {
-          const key = document.getElementById("keyInput").value;
-          fetch("https://saiudja.space/check_key.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: "key=" + encodeURIComponent(key),
-          })
-            .then((response) => response.text())
-            .then((data) => {
-              if (data.trim() === "OK") {
-                document.getElementById("gallery1").style.display = "block";
-                document.getElementById("keyForm").style.display = "none";
-                document
-                  .getElementById("gallery1")
-                  .scrollIntoView({ behavior: "smooth" });
-              } else {
-                document.getElementById("errorMessage").innerText =
-                  "Невірний ключ, спробуйте ще раз.";
-              }
-            });
+          document
+            .getElementById("gallery1")
+            .scrollIntoView({ behavior: "smooth" });
         });
     </script>
   </body>

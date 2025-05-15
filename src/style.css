@@ -404,7 +404,7 @@ nav li.active a {
 }
 
 .gallery img {
-  width: 33.33%;
+  /* width: 33.33%; */
   height: auto;
   margin: 0;
   padding: 0;
@@ -481,5 +481,8 @@ nav li.active a {
   .navigation-links a {
     margin: 0 5px;
     white-space: nowrap;
+  }
+  .gallery1 img {
+    width: 100%;
   }
 }
