@@ -79,11 +79,12 @@ footer .social-links a:hover {
   opacity: 0.6;
   transition: all 100ms ease-in-out;
 }
-/* img {
+/* main img {
   width: 300px;
   height: auto;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  margin: 0 auto;
 } */
 .fullscreen {
   position: fixed;
@@ -91,24 +92,33 @@ footer .social-links a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.fullscreen img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 .blu {
   color: #4e89ae;
 }
-.fullscreen img {
-  max-width: 90vw;
-  max-height: 90vh;
-  height: auto;
-  width: auto;
-  transform: scale(1); /* Початковий масштаб */
-  transition: transform 0.1s ease-in-out;
+
+.center-container {
+  text-align: center;
+  padding: 50px 0;
 }
 
+.center-container img {
+  max-width: 80%;
+  height: auto;
+}
 h1 {
   color: black;
   font-size: 48px;
