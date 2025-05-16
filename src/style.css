@@ -159,6 +159,16 @@ p {
   padding: 0;
   width: 26%;
 }
+.floating-image {
+  position: fixed;
+  width: 100px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 2s ease, transform 5s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 ul {
   list-style-type: none;
   font-size: 18px;
@@ -414,7 +424,7 @@ nav li.active a {
 }
 
 .gallery img {
-  /* width: 33.33%; */
+  width: 33.33%;
   height: auto;
   margin: 0;
   padding: 0;
