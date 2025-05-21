@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gate: 5DArt Activator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@thirdweb-dev/sdk@3.17.5/dist/thirdweb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 2rem;
+        background: #f0f0f0;
+      }
+      button {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        background: #4caf50;
+        color: white;
+        text-decoration: none;
+      }
+      #status {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔐 Активуй свій NFT</h1>
+    <p>
+      Ця сторінка перевіряє, чи є у вашому гаманці NFT з колекції
+      <strong>5DArt Activators</strong>.
+    </p>
+    <button id="connectWallet">🔗 Під’єднати гаманець</button>
+    <p id="status"></p>
+
+    <script>
+      const contractAddress = "0x07f2dda4f4ce04e56308f1165e30c53430bdbe62";
+      const tokenId = 0; // Змініть, якщо ваш токен має інший ID
+      const redirectUrl = "https://saiudja.space/plants-activation-25.html";
+
+      document.getElementById("connectWallet").onclick = async () => {
+        try {
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          await provider.send("eth_requestAccounts", []);
+          const signer = provider.getSigner();
+          const walletAddress = await signer.getAddress();
+          document.getElementById("status").innerText =
+            "🔍 Перевіряємо ваш NFT...";
+
+          const sdk = new thirdweb.ThirdwebSDK(provider.getSigner(), {
+            chainId: 8453, // Base Mainnet
+          });
+
+          const contract = await sdk.getContract(contractAddress, "edition");
+
+          const balance = await contract.balanceOf(walletAddress, tokenId);
+
+          if (balance.toNumber() > 0) {
+            document.getElementById("status").innerText =
+              "✅ Доступ надано! Перенаправляємо...";
+            setTimeout(() => (window.location.href = redirectUrl), 2000);
+          } else {
+            document.getElementById("status").innerText =
+              "⛔ У вас немає потрібного NFT. Перевірте свій гаманець.";
+          }
+        } catch (err) {
+          console.error(err);
+          document.getElementById("status").innerText =
+            "⚠️ Помилка при з’єднанні з гаманцем.";
+        }
+      };
+    </script>
+  </body>
+</html>
