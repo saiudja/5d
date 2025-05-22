@@ -6,27 +6,49 @@ const abi = [
   "function balanceOfBatch(address[] accounts, uint256[] ids) view returns (uint256[])",
 ];
 
+// Функція для спроби підключення до мережі Base Mainnet
+async function switchToBaseMainnet(provider) {
+  try {
+    await provider.send("wallet_switchEthereumChain", [{ chainId: "0x2105" }]);
+  } catch (switchError) {
+    if (switchError.code === 4902) {
+      // Мережа не додана, додаємо Base Mainnet
+      await provider.send("wallet_addEthereumChain", [
+        {
+          chainId: "0x2105", // 8453 у шістнадцятковому форматі
+          chainName: "Base Mainnet",
+          rpcUrls: ["https://mainnet.base.org"],
+          nativeCurrency: { name: "ETH", symbol: "ETH", decimals: 18 },
+          blockExplorerUrls: ["https://basescan.org"],
+        },
+      ]);
+    } else {
+      throw switchError;
+    }
+  }
+}
+
 document.getElementById("connectWallet").addEventListener("click", async () => {
   try {
-    // Перевірка наявності гаманця (MetaMask або іншого)
+    // Перевірка наявності Web3-провайдера
     if (!window.ethereum) {
       document.getElementById("status").innerText =
-        "⚠️ Гаманець не виявлено. Встановіть MetaMask або інший Web3-гаманець.";
+        "⚠️ Гаманець не виявлено. Відкрийте цю сторінку у браузері MetaMask, Trust Wallet або іншому Web3-гаманці.";
       return;
     }
 
-    // Підключення до гаманця
+    // Ініціалізація провайдера
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     document.getElementById("status").innerText =
       "🔗 Підключення до гаманця...";
+
+    // Запит на підключення гаманця
     await provider.send("eth_requestAccounts", []);
 
-    // Перевірка мережі (Base Mainnet, chainId: 8453)
+    // Перевірка та перемикання на Base Mainnet
     const network = await provider.getNetwork();
     if (network.chainId !== 8453) {
-      document.getElementById("status").innerText =
-        "⚠️ Будь ласка, підключіться до мережі Base Mainnet.";
-      return;
+      await switchToBaseMainnet(provider);
     }
 
     const signer = provider.getSigner();
@@ -68,3 +90,10 @@ document.getElementById("connectWallet").addEventListener("click", async () => {
     }`;
   }
 });
+
+// Додаємо підтримку сенсорних подій для мобільних пристроїв
+document
+  .getElementById("connectWallet")
+  .addEventListener("touchstart", async () => {
+    document.getElementById("connectWallet").click();
+  });
