@@ -438,7 +438,6 @@ nav li.active a {
 }
 @media (max-width: 768px) {
   body {
-    padding: 1rem; /* Зменшуємо padding для мобільних */
     min-width: 0; /* Видаляємо мінімальну ширину */
     max-width: 100vw; /* Обмежуємо ширину до розміру екрану */
   }
