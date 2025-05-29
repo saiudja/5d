@@ -24,29 +24,18 @@
     <link href="/src/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="heros text-center">
-      <h1>🔐 Активуй свій NFT</h1>
-      <p>
-        Ця сторінка перевіряє, чи є у вашому гаманці NFT з колекції
-        <strong>5DArt Activators</strong>.
-      </p>
-      <button id="connectWallet" class="primary-link btn btn-primary">
-        🔗 Під’єднати гаманець
-      </button>
-      <div class="activation-code mt-4">
-        <h2>Або введіть код активації</h2>
-        <form id="activationForm" class="d-flex justify-content-center gap-2">
-          <input
-            type="text"
-            id="activationCode"
-            class="form-control w-auto"
-            placeholder="Введіть код активації"
-            required
-          />
-          <button type="submit" class="btn btn-primary">Перевірити код</button>
-        </form>
+    <div class="container">
+      <div class="heros text-center">
+        <h1 class="text-center">🔐 Активуй свій NFT</h1>
+        <p>
+          Ця сторінка перевіряє, чи є у вашому гаманці NFT з колекції
+          <strong>5DArt Activators</strong>.
+        </p>
+        <button id="connectWallet" class="primary-link">
+          🔗 Під’єднати гаманець
+        </button>
+        <p id="status"></p>
       </div>
-      <p id="status" class="mt-3"></p>
     </div>
     <script src="script.js"></script>
   </body>

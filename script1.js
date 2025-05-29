@@ -12,9 +12,10 @@ async function switchToBaseMainnet(provider) {
     await provider.send("wallet_switchEthereumChain", [{ chainId: "0x2105" }]);
   } catch (switchError) {
     if (switchError.code === 4902) {
+      // Мережа не додана, додаємо Base Mainnet
       await provider.send("wallet_addEthereumChain", [
         {
-          chainId: "0x2105",
+          chainId: "0x2105", // 8453 у шістнадцятковому форматі
           chainName: "Base Mainnet",
           rpcUrls: ["https://mainnet.base.org"],
           nativeCurrency: { name: "ETH", symbol: "ETH", decimals: 18 },
@@ -27,21 +28,24 @@ async function switchToBaseMainnet(provider) {
   }
 }
 
-// Перевірка NFT у гаманці
 document.getElementById("connectWallet").addEventListener("click", async () => {
   try {
+    // Перевірка наявності Web3-провайдера
     if (!window.ethereum) {
       document.getElementById("status").innerText =
         "⚠️ Гаманець не виявлено. Відкрийте цю сторінку у браузері MetaMask, Trust Wallet або іншому Web3-гаманці.";
       return;
     }
 
+    // Ініціалізація провайдера
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     document.getElementById("status").innerText =
       "🔗 Підключення до гаманця...";
 
+    // Запит на підключення гаманця
     await provider.send("eth_requestAccounts", []);
 
+    // Перевірка та перемикання на Base Mainnet
     const network = await provider.getNetwork();
     if (network.chainId !== 8453) {
       await switchToBaseMainnet(provider);
@@ -53,17 +57,22 @@ document.getElementById("connectWallet").addEventListener("click", async () => {
       "status"
     ).innerText = `🔍 Перевіряємо NFT для адреси ${walletAddress}...`;
 
+    // Створення екземпляра контракту
     const contract = new ethers.Contract(contractAddress, abi, provider);
-    const tokenIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    // Перевірка балансу для кількох tokenId
+    const tokenIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // Список можливих tokenId
     const accounts = Array(tokenIds.length).fill(walletAddress);
     const balances = await contract.balanceOfBatch(accounts, tokenIds);
 
+    // Логування для діагностики
     console.log("Token IDs:", tokenIds);
     console.log(
       "Balances:",
       balances.map((b) => b.toNumber())
     );
 
+    // Перевірка, чи є хоча б один токен із ненульовим балансом
     const hasNFT = balances.some((balance) => balance.toNumber() > 0);
 
     if (hasNFT) {
@@ -72,7 +81,7 @@ document.getElementById("connectWallet").addEventListener("click", async () => {
       setTimeout(() => (window.location.href = redirectUrl), 2000);
     } else {
       document.getElementById("status").innerText =
-        "⛔ У вас немає потрібного NFT. Спробуйте ввести код активації.";
+        "⛔ У вас немає потрібного NFT. Перевірте свій гаманець.";
     }
   } catch (err) {
     console.error("Помилка:", err);
@@ -81,43 +90,6 @@ document.getElementById("connectWallet").addEventListener("click", async () => {
     }`;
   }
 });
-
-// Перевірка коду активації через Netlify Function
-document
-  .getElementById("activationForm")
-  .addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const inputCode = document.getElementById("activationCode").value.trim();
-    const statusElement = document.getElementById("status");
-    statusElement.innerText = "🔍 Перевіряємо код активації...";
-
-    try {
-      const response = await fetch("/.netlify/functions/verify-code", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: inputCode }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      if (result.valid) {
-        statusElement.innerText = "✅ Код підтверджено! Перенаправляємо...";
-        setTimeout(() => (window.location.href = redirectUrl), 2000);
-      } else {
-        statusElement.innerText = `⛔ Неправильний код активації: ${
-          result.error || "Перевірте код і спробуйте ще раз."
-        }`;
-      }
-    } catch (err) {
-      console.error("Помилка при перевірці коду:", err);
-      statusElement.innerText = `⚠️ Помилка при перевірці коду: ${
-        err.message || "Спробуйте ще раз."
-      }`;
-    }
-  });
 
 // Додаємо підтримку сенсорних подій для мобільних пристроїв
 document
