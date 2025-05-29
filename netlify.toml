@@ -1,4 +1,1 @@
-[build]
-  command = "" 
-  publish = "." 
-  functions = "functions"
+[build]\n  command = ""\n  publish = "."\n  functions = "functions"
