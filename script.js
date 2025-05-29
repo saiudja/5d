@@ -1,12 +1,10 @@
 const contractAddress = "0x07f2dda4f4ce04e56308f1165e30c53430bdbe62";
 const redirectUrl = "https://saiudja.space/plants-activation-25.html";
 
-// ABI для виклику balanceOfBatch (ERC-1155)
 const abi = [
   "function balanceOfBatch(address[] accounts, uint256[] ids) view returns (uint256[])",
 ];
 
-// Функція для спроби підключення до мережі Base Mainnet
 async function switchToBaseMainnet(provider) {
   try {
     await provider.send("wallet_switchEthereumChain", [{ chainId: "0x2105" }]);
@@ -27,7 +25,6 @@ async function switchToBaseMainnet(provider) {
   }
 }
 
-// Перевірка NFT у гаманці
 document.getElementById("connectWallet").addEventListener("click", async () => {
   try {
     if (!window.ethereum) {
@@ -82,7 +79,6 @@ document.getElementById("connectWallet").addEventListener("click", async () => {
   }
 });
 
-// Перевірка коду активації через Netlify Function
 document
   .getElementById("activationForm")
   .addEventListener("submit", async (event) => {
@@ -119,7 +115,6 @@ document
     }
   });
 
-// Додаємо підтримку сенсорних подій для мобільних пристроїв
 document
   .getElementById("connectWallet")
   .addEventListener("touchstart", async () => {
