@@ -4,7 +4,7 @@ const path = require("path");
 exports.handler = async function (event) {
   try {
     const { code } = JSON.parse(event.body);
-    const filePath = path.join(__dirname, "codes.json");
+    const filePath = path.join(__functions, "codes.json");
 
     // Перевірка наявності файлу
     let codesData;
