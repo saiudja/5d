@@ -1,1 +1,1 @@
-[build]\n  command = ""\n  publish = "."\n  functions = "functions"
+[build]\n  command = ""\n  publish = "."\n  functions = "/netlify/functions"

@@ -3,10 +3,24 @@ const path = require("path");
 
 exports.handler = async function (event) {
   try {
-    const { code } = JSON.parse(event.body);
-    const filePath = path.join(__functions, "codes.json");
+    if (event.httpMethod !== "POST") {
+      return {
+        statusCode: 405,
+        body: JSON.stringify({
+          error: "Метод не дозволено. Використовуйте POST.",
+        }),
+      };
+    }
 
-    // Перевірка наявності файлу
+    const { code } = JSON.parse(event.body);
+    if (!code) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Код не надано" }),
+      };
+    }
+
+    const filePath = path.join(__dirname, "codes.json");
     let codesData;
     try {
       const fileContent = await fs.readFile(filePath, "utf8");
@@ -15,7 +29,7 @@ exports.handler = async function (event) {
       if (error.code === "ENOENT") {
         return {
           statusCode: 500,
-          body: JSON.stringify({ error: "Файл кодів не знайдено" }),
+          body: JSON.stringify({ error: "Файл codes.json не знайдено" }),
         };
       }
       throw error;
@@ -27,6 +41,7 @@ exports.handler = async function (event) {
       body: JSON.stringify({ valid: isValid }),
     };
   } catch (error) {
+    console.error("Помилка сервера:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Помилка сервера" }),
