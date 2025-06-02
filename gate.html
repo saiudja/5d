@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; connect-src 'self' https://*.netlify.app; object-src 'none'; font-src 'self' https://fonts.gstatic.com;"
+      content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; connect-src 'self' https://base-mainnet.g.alchemy.com; object-src 'none';"
     />
-    <title>Gate: 5DArt Activation Code</title>
+    <title>Gate: 5DArt Activator</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,20 +26,17 @@
   <body>
     <div class="container">
       <div class="heros text-center">
-        <h1 class="text-center">🔐 Введіть код активації</h1>
-        <p>Введіть код активації для доступу до контенту.</p>
-        <input
-          type="text"
-          id="codeInput"
-          class="form-control d-inline-block w-auto"
-        />
-        <button onclick="checkCode()" class="btn btn-primary mt-2">
-          Перевірити код
+        <h1 class="text-center">🔐 Активуй свій NFT</h1>
+        <p>
+          Ця сторінка перевіряє, чи є у вашому гаманці NFT з колекції
+          <strong>5DArt Activators</strong>.
+        </p>
+        <button id="connectWallet" class="primary-link">
+          🔗 Під’єднати гаманець
         </button>
-        <p id="result" class="text-success mt-2"></p>
-        <p id="error" class="text-danger mt-2"></p>
+        <p id="status"></p>
       </div>
     </div>
-    <script src="activation.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
